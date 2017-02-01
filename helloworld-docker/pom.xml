@@ -1,0 +1,70 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>fr.univtln.bruno.test.helloworld</groupId>
+        <artifactId>parent</artifactId>
+        <version>0.1-SNAPSHOT</version>
+    </parent>
+
+    <groupId>fr.univtln.bruno.test.helloworld</groupId>
+    <artifactId>docker</artifactId>
+    <version>0.1-SNAPSHOT</version>
+    <packaging>docker</packaging>
+
+    <name>Hello World - Docker</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>fr.univtln.bruno.test.helloworld</groupId>
+            <artifactId>app</artifactId>
+            <classifier>withdependencies</classifier>
+            <version>0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>io.fabric8</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <configuration>
+                    <images>
+                        <image>
+                            <alias>app</alias>
+                            <name>brunoe/${projectShortName}:${project.version}</name>
+                            <build>
+                                <from>openjdk:8u111-jre-alpine</from>
+                                <assembly>
+                                    <targetDir>/</targetDir>
+                                    <inline>
+                                        <dependencySets>
+                                            <dependencySet>
+                                                <outputDirectory>/opt/</outputDirectory>
+                                                <outputFileNameMapping>App.jar</outputFileNameMapping>
+                                                <includes>
+                                                    <include>fr.univtln.bruno.test.helloworld:app:jar:withdependencies:*</include>
+                                                </includes>
+                                            </dependencySet>
+                                        </dependencySets>
+                                    </inline>
+                                </assembly>
+                                <cmd>
+                                    <shell>java -jar /opt/App.jar</shell>
+                                </cmd>
+                            </build>
+                            <external>
+                                <type>compose</type>
+                            </external>
+                        </image>
+                    </images>
+                </configuration>
+            </plugin>
+
+
+        </plugins>
+    </build>
+
+
+</project>

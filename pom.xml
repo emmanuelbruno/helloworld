@@ -1,0 +1,71 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <properties>
+        <projectShortName>helloworld</projectShortName>
+        <!-- the default Main class -->
+        <app.main.class>fr.univtln.bruno.test.App</app.main.class>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>lsis-nexus</id>
+            <name>lsis-nexus-releases</name>
+            <url>https://nexus.lsis.univ-tln.fr/repository/maven-public</url>
+        </repository>
+    </repositories>
+
+    <parent>
+        <groupId>fr.univtln.bruno.pom</groupId>
+        <artifactId>common-pom</artifactId>
+        <version>0.3-SNAPSHOT</version>
+    </parent>
+
+    <groupId>fr.univtln.bruno.test.helloworld</groupId>
+    <artifactId>parent</artifactId>
+    <version>0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>Hello World - Parent</name>
+    <description>A simple java Program</description>
+    <url>https://emmanuelbruno.github.io/${projectShortName}/</url>
+    <inceptionYear>2017</inceptionYear>
+
+    <ciManagement>
+        <system>Jenkins</system>
+        <url>https://jenkins.lsis.univ-tln.fr/job/emmanuelbruno/job/${projectShortName}</url>
+    </ciManagement>
+
+    <organization>
+        <name>Université de Toulon</name>
+        <url>http://www.univ-tln.fr</url>
+    </organization>
+
+    <developers>
+        <developer>
+            <id>emmanuelbruno</id>
+            <name>Emmanuel Bruno</name>
+            <email>bruno@univ-tln.fr</email>
+            <url>http://bruno.univ-tln.fr</url>
+            <organization>Université de Toulon</organization>
+            <organizationUrl>http://www.univ-tln.fr</organizationUrl>
+            <roles>
+                <role>architect</role>
+                <role>developer</role>
+            </roles>
+            <timezone>Europe/Paris</timezone>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git@github.com:emmanuelbruno/${projectShortName}.git</connection>
+        <url>https://github.com/emmanuelbruno/${projectShortName}</url>
+    </scm>
+
+    <modules>
+        <module>helloworld-app</module>
+        <module>helloworld-docker</module>
+    </modules>
+
+</project>
