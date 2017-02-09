@@ -10,7 +10,6 @@
 
     <groupId>fr.univtln.bruno.test.helloworld</groupId>
     <artifactId>docker</artifactId>
-    <version>0.1-SNAPSHOT</version>
     <packaging>docker</packaging>
 
     <name>Hello World - Docker</name>
@@ -54,9 +53,13 @@
                                     <shell>java -jar /opt/App.jar</shell>
                                 </cmd>
                             </build>
+
                             <external>
                                 <type>compose</type>
+                                <basedir>src/main/docker</basedir>
+                                <composeFile>docker-compose.yml</composeFile>
                             </external>
+
                         </image>
                     </images>
                 </configuration>

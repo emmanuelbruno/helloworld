@@ -8,3 +8,10 @@ GroupID : ${project.groupId}
 ArtifactId : ${project.artifactId}
                 
 Project Version : ${project.version}
+
+mvn package
+
+mvn site
+mvn site -P github-site
+
+docker run --rm -it brunoe/helloworld:${project.version}

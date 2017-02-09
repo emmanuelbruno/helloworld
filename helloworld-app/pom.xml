@@ -10,7 +10,6 @@
 
     <groupId>fr.univtln.bruno.test.helloworld</groupId>
     <artifactId>app</artifactId>
-    <version>0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>Hello World - App</name>

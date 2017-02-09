@@ -24,7 +24,7 @@ public class App {
     public static void main(String[] args) {
         logger.info("App started.");
         logger.debug("About to talk :");
-        System.out.println("Hello world ! TER");
+        System.out.println("Hello world !");
     }
 
 }
