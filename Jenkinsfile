@@ -20,7 +20,7 @@ node() {
         jenkinsFileLSISUtils.mvnTest()
         //check quality
         jenkinsFileLSISUtils.mvnQuality()
-        
+
         jenkinsFileLSISUtils.mvnDeploy("-P stage-devel")
         //jenkinsFileLSISUtils.mvnDeploy("-P stage-staging")
         //jenkinsFileLSISUtils.mvnDeploy("-P stage-production")
