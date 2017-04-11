@@ -4,14 +4,12 @@
 
     <properties>
         <projectShortName>helloworld</projectShortName>
+        <github.account>emmanuelbruno</github.account>
+        <utln.login>bruno</utln.login>
+        <github.global.server>github</github.global.server>
 
         <!-- the default Main class -->
         <app.main.class>fr.univtln.bruno.test.App</app.main.class>
-
-        <utln.login>bruno</utln.login>
-
-        <github.global.server>github</github.global.server>
-        <github.account>emmanuelbruno</github.account>
     </properties>
 
     <!-- Needed here to find a least the parent pom -->
