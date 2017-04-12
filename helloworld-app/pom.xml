@@ -5,7 +5,6 @@
         <groupId>fr.univtln.bruno.test</groupId>
         <artifactId>helloworld</artifactId>
         <version>0.1-test-SNAPSHOT</version>
-
     </parent>
 
     <groupId>fr.univtln.bruno.test.helloworld</groupId>
