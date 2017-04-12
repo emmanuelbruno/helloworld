@@ -4,7 +4,7 @@
     <parent>
         <groupId>fr.univtln.bruno.test</groupId>
         <artifactId>helloworld</artifactId>
-        <version>0.1-test-SNAPSHOT</version>
+        <version>0.1-SNAPSHOT</version>
     </parent>
 
     <groupId>fr.univtln.bruno.test.helloworld</groupId>
@@ -18,7 +18,7 @@
             <groupId>fr.univtln.bruno.test.helloworld</groupId>
             <artifactId>app</artifactId>
             <classifier>withdependencies</classifier>
-            <version>0.1-test-SNAPSHOT</version>
+            <version>0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
